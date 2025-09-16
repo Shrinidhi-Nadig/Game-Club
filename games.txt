@@ -1,6 +1,6 @@
-http://localhost:8080/members/64c849a1ad228f59a672a0f3
+http://localhost:4000/games/64c849a1ad228f59a672a0f3
 
-Base URL : http://localhost:8080
+Base URL : http://localhost:4000
 
 API End Points: for games
 
