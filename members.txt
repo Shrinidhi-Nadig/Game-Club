@@ -1,0 +1,37 @@
+API Endpoints for members:
+
+
+POST/members/
+{
+  "id": 1,
+  "name": "Srinivas",
+  "ph_no": "7892405829",
+  "balance": 120.50
+}
+
+
+GET/members/{id}  (get the member with the id=1)
+{
+  "id": 1,
+  "name": "Srinivas",
+  "ph_no": "7892405829",
+  "balance": 120.50
+}
+
+
+PUT/members/{id}  (update the member with the id=1)
+{
+  "id": 1,
+  "name": "Rohit M H",
+  "ph_no": "9876548764",
+  "balance": 2000.50
+}
+
+
+DELETE/members/{id}  (delete the member with the id=1)
+{
+  "id": 1,
+  "name": "Rohit M H",
+  "ph_no": "9876548764",
+  "balance": 2000.50
+}
