@@ -1,4 +1,21 @@
-POST/games/
+http://localhost:8080/members/64c849a1ad228f59a672a0f3
+
+Base URL : http://localhost:8080
+
+API End Points: for games
+
+POST    (Inserting the Game)
+
+/games
+
+Request body:
+{
+    "name": "Air Hockey",
+    "price": 50.0,
+    "description": "Two-player table game with pucks and paddles."
+}
+
+Response body:201(status code for created status)
 {
     "_id": 1,
     "name": "Air Hockey",
@@ -7,7 +24,11 @@ POST/games/
 },
 
 
-GET/games/{id}  (get the games with the id=1)
+GET  (get the games with the id=1)
+
+games/{id}
+
+Response Body:200 (status code :fetch is ok)
 {
     "_id": 1,
     "name": "Air Hockey",
@@ -16,7 +37,18 @@ GET/games/{id}  (get the games with the id=1)
 }
 
 
-PUT /games/{id}  (update the games with the id=1)
+PUT: (update the games with the id=1)
+
+/games/{id}
+
+Request body:
+{
+    "name": "Cricket",
+    "price": 100.0,
+    "description": "per team 11 players should be there!!"
+}			
+
+Response Body: 200(status code for updated successfully)
 {
     "_id": 1,
     "name": "Cricket",
@@ -24,11 +56,11 @@ PUT /games/{id}  (update the games with the id=1)
     "description": "per team 11 players should be there!!"
 }
 
+DELETE : (delete the member with the id=1)
 
-DELETE /games/{id}  (delete the member with the id=1)
+/games/{id} 
+
+Response Body:200 (status code :deleted successfully)
 {
-    "_id": 1,
-    "name": "Cricket",
-    "price": 100.0,
-    "description": "per team 11 players should be there!!"
+    "message" : " Deleted successfully"
 }
