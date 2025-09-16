@@ -1,5 +1,8 @@
 API Endpoints for members:
-Base URL: https://localhost:4000
+
+http://localhost:4000/members/68c849a1ad228f59a572a0e3
+
+Base URL: https://localhost:4000/
 
 
 POST:    (Inserting the member)
