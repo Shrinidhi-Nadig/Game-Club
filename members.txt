@@ -1,7 +1,19 @@
 API Endpoints for members:
+Base URL: https://localhost:4000
 
 
-POST/members/
+POST:    (Inserting the member)
+
+/members
+
+Request body:
+{
+  "name": "Srinivas",
+  "ph_no": "7892405829",
+  "balance": 120.50
+}
+
+Responce body: 201(status code for created status)
 {
   "id": 1,
   "name": "Srinivas",
@@ -10,7 +22,11 @@ POST/members/
 }
 
 
-GET/members/{id}  (get the member with the id=1)
+GET:
+
+/members/{id}  (get the member with the id=1)
+
+Responce body: (status code :fetch is ok)
 {
   "id": 1,
   "name": "Srinivas",
@@ -19,7 +35,18 @@ GET/members/{id}  (get the member with the id=1)
 }
 
 
-PUT/members/{id}  (update the member with the id=1)
+PUT:    
+
+/members/{id}  (update the member with the id=1)
+
+Request body:
+{
+  "name": "Rohit M H",
+  "ph_no": "9876548764",
+  "balance": 2000.50
+}
+
+Responce body: 200(status code for updated successfully)
 {
   "id": 1,
   "name": "Rohit M H",
@@ -28,10 +55,11 @@ PUT/members/{id}  (update the member with the id=1)
 }
 
 
-DELETE/members/{id}  (delete the member with the id=1)
+DELETE:   
+
+/members/{id}  (delete the member with the id=1)
+
+Response Body:200 (status code :deleted successfully)
 {
-  "id": 1,
-  "name": "Rohit M H",
-  "ph_no": "9876548764",
-  "balance": 2000.50
+	"message" : " Deleted successfully"
 }
