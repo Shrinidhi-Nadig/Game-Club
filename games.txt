@@ -1,5 +1,3 @@
-http://localhost:4000/games/64c849a1ad228f59a672a0f3
-
 Base URL : http://localhost:4000
 
 API End Points: for games
@@ -23,10 +21,23 @@ Response body:201(status code for created status)
     "description": "Two-player table game with pucks and paddles."
 },
 
+GET  (get all)
+
+/games
+
+Response Body:200 (status code :fetch is ok)
+[
+{
+    "_id": 1,
+    "name": "Air Hockey",
+    "price": 50.0,
+    "description": "Two-player table game with pucks and paddles."
+}
+]
 
 GET  (get the games with the id=1)
 
-games/{id}
+/games/{id}
 
 Response Body:200 (status code :fetch is ok)
 {
