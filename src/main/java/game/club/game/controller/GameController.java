@@ -2,57 +2,51 @@ package game.club.game.controller;
 
 import java.util.List;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import game.club.game.model.Game;
 import game.club.game.repository.GameRepository;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @RestController
-@RequestMapping("/games")
+@RequestMapping("/game")
 public class GameController {
+
     @Autowired
     private GameRepository gameRepository;
+
+    // Create a new game
     @PostMapping
     public Game createGame(@RequestBody Game game) {
-        game.setId(null);
-        Game savedGame = gameRepository.save(game);
-        return savedGame;
+        game.setId(null); // ensure new entity
+        return gameRepository.save(game);
     }
-    @GetMapping("path")
-    public List<Game>findAll(){
-        List<Game> game = gameRepository.findAll();
-        return game;
+
+    // Get all games
+    @GetMapping
+    public List<Game> findAll() {
+        return gameRepository.findAll();
     }
-    @GetMapping("path/{id}")
-    public Game findBYId(@PathVariable String id){
-        Game game = gameRepository.findById(id).get();
-        return game;
+
+    // Get game by id
+    @GetMapping("/{id}")
+    public Game findById(@PathVariable String id) {
+        return gameRepository.findById(id).orElse(null);
     }
-    @PutMapping("path/{id}")
-    public Game Update(@PathVariable String id, @RequestBody Game game) {
-        Game oldGame = gameRepository.findById(id).get();
+
+    // Update game
+    @PutMapping("/{id}")
+    public Game update(@PathVariable String id, @RequestBody Game game) {
+        Game oldGame = gameRepository.findById(id).orElseThrow();
         oldGame.setName(game.getName());
         oldGame.setDescription(game.getDescription());
         oldGame.setPrice(game.getPrice());
-
-        Game updatedGame = gameRepository.save(oldGame);
-        return updatedGame; 
+        return gameRepository.save(oldGame);
     }
-    @DeleteMapping("path/{id}")
+
+    // Delete game
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable String id) {
         gameRepository.deleteById(id);
     }
-    
 }
