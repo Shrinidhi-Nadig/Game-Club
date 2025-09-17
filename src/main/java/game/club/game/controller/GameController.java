@@ -17,7 +17,7 @@ public class GameController {
 
     // Create a new game
     @PostMapping
-    public Game createGame(@RequestBody Game game) {
+    public Game createGame(@RequestBody Game game)   {
         game.setId(null); // ensure new entity
         return gameRepository.save(game);
     }
